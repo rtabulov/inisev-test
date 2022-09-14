@@ -1,0 +1,131 @@
+@import './base.scss';
+@import './utils.scss';
+
+$sidebar-width: 15rem;
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  flex-grow: 0;
+  flex-shrink: 0;
+  z-index: 10;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: #333;
+  color: #fff;
+
+  padding: 2rem;
+
+  &__links-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__link {
+    display: block;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+}
+
+.main {
+  padding-left: $sidebar-width;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+.checkmark {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.1s;
+
+  &--checked {
+    background-color: cadetblue;
+  }
+
+  &__icon {
+    opacity: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    transition: opacity 0.1s;
+  }
+
+  &--checked &__icon {
+    opacity: 1;
+  }
+}
+
+.simple-button {
+  background-color: #eee;
+  border-color: #ccc;
+  box-shadow: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.email-item {
+  background-color: #eee;
+  border-color: #ccc;
+  box-shadow: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 1rem 1rem;
+
+  display: flex;
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+
+  transition: opacity 0.1s;
+
+  &--read {
+    opacity: 0.5;
+  }
+}
+
+.email-view {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: $sidebar-width * 2;
+  z-index: 30;
+
+  padding: 2rem;
+
+  background-color: #fff;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
